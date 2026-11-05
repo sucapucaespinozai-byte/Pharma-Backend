@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="PharmaBackend Java 21" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="tienda" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.tienda.TiendaApplication" />
+    <option name="ALTERNATIVE_JRE_PATH" value="C:/Users/sucap/.gradle/jdks/eclipse_adoptium-21-amd64-windows.2" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="ACTIVE_PROFILES" value="local" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <method v="2"><option name="Make" enabled="true" /></method>
+  </configuration>
+</component>
