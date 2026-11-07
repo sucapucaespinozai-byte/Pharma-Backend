@@ -1,6 +1,13 @@
 $ErrorActionPreference='Stop'
 $baseDemo='http://localhost:8080/api/v1'
-$sesionDemo=Invoke-RestMethod "$baseDemo/auth/login" -Method Post -ContentType application/json -Body (@{username='admin';password='Admin2026*'}|ConvertTo-Json)
+$usuarioDemo = if ($env:PRACTICA_ADMIN_USERNAME) { $env:PRACTICA_ADMIN_USERNAME } else { Read-Host 'Usuario administrador' }
+$claveDemo = $env:PRACTICA_ADMIN_PASSWORD
+if (!$claveDemo) {
+    $claveProtegidaDemo = Read-Host 'Clave del administrador' -AsSecureString
+    $credencialDemo = [pscredential]::new($usuarioDemo, $claveProtegidaDemo)
+    $claveDemo = $credencialDemo.GetNetworkCredential().Password
+}
+$sesionDemo=Invoke-RestMethod "$baseDemo/auth/login" -Method Post -ContentType application/json -Body (@{username=$usuarioDemo;password=$claveDemo}|ConvertTo-Json)
 $cabecerasDemo=@{Authorization="Bearer $($sesionDemo.token)"}
 function PostDemo($ruta,$cuerpo) { Invoke-RestMethod "$baseDemo/$ruta" -Method Post -Headers $cabecerasDemo -ContentType application/json -Body ($cuerpo|ConvertTo-Json -Depth 5) }
 $categoriasDemo=Invoke-RestMethod "$baseDemo/categorias" -Headers $cabecerasDemo
