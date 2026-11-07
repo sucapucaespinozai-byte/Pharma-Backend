@@ -1,0 +1,40 @@
+
+> pharmasoft@0.0.0 build:stats
+> ng build --configuration production --stats-json --output-path=C:/PHARMAPROYECT/autonoma-s13/builds/sin-precarga
+
+> Building...
+√ Building...
+Initial chunk files | Names          |  Raw size | Estimated transfer size
+chunk-GJNVe9Tv.js   | -              | 201.04 kB |                58.89 kB
+main-RVNBKP2O.js    | main           | 100.96 kB |                25.65 kB
+styles-DZD72HIP.css | styles         |  11.20 kB |                 2.79 kB
+
+                    | Initial total  | 313.21 kB |                87.32 kB
+
+Lazy chunk files    | Names          |  Raw size | Estimated transfer size
+chunk-CDZLttas.js   | -              |  46.98 kB |                 9.94 kB
+chunk-9G9jUoqP.js   | main-layout    |   8.69 kB |                 2.56 kB
+chunk-BAP2phOm.js   | venta-form     |   7.22 kB |                 2.63 kB
+chunk-lehE3TTs.js   | producto-form  |   5.42 kB |                 2.06 kB
+chunk-o0cz36_7.js   | login          |   5.31 kB |                 1.94 kB
+chunk-_ql3vH8O.js   | venta-list     |   4.99 kB |                 2.00 kB
+chunk-B5qJwYf1.js   | producto-list  |   4.93 kB |                 1.93 kB
+chunk-BGQgrObu.js   | cuenta         |   4.81 kB |                 1.85 kB
+chunk-DKr9feyh.js   | categoria-list |   4.73 kB |                 1.84 kB
+chunk-BMoLE5Le.js   | inicio         |   4.14 kB |                 1.60 kB
+chunk-DzAqdsCA.js   | categoria-form |   4.06 kB |                 1.68 kB
+chunk-BaJrTtS7.js   | venta-detail   |   3.23 kB |                 1.38 kB
+chunk-BV8uHXt6.js   | mas-vendidos   |   2.50 kB |                 1.20 kB
+chunk-BxXSa2E5.js   | -              |   1.86 kB |               603 bytes
+chunk-Dfg2kcQd.js   | -              | 882 bytes |               882 bytes
+...and 3 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [8.347 seconds] - 2026-11-07T11:11:02.798Z
+
+Output location: C:\PHARMAPROYECT\autonoma-s13\builds\sin-precarga
+
+npm notice
+npm notice New major version of npm available! 11.17.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

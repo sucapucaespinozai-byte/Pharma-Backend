@@ -164,6 +164,11 @@
     "PharmaBackend": {
       "commits": [
         [
+          "79e2f17",
+          "2026-11-07",
+          "docs(s13): informe autonomo con mediciones, capturas y pendientes reales"
+        ],
+        [
           "f816b68",
           "2026-11-07",
           "docs(deploy): arquitectura, rollback y mediciones reproducibles"
@@ -245,6 +250,21 @@
       ]
     }
   },
-  "prs": [],
+  "prs": [
+    {
+      "repositorio": "Pharma-Backend",
+      "url": "https://github.com/sucapucaespinozai-byte/Pharma-Backend/pull/1",
+      "numero": 1,
+      "base": "develop",
+      "rama": "feature/autonoma-s13-espinoza"
+    },
+    {
+      "repositorio": "Fronted",
+      "url": "https://github.com/sucapucaespinozai-byte/Fronted/pull/1",
+      "numero": 1,
+      "base": "develop",
+      "rama": "feature/autonoma-s13-espinoza"
+    }
+  ],
   "pendienteCalendario": true
 }

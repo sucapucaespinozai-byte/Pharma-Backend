@@ -1,0 +1,35 @@
+
+> pharmasoft@0.0.0 build:stats
+> ng build --configuration production --stats-json --output-path=C:/PHARMAPROYECT/autonoma-s13/builds/optimizado
+
+> Building...
+√ Building...
+Initial chunk files | Names           |  Raw size | Estimated transfer size
+chunk-GJNVe9Tv.js   | -               | 201.04 kB |                58.89 kB
+main-OQ3K3CPV.js    | main            |  98.91 kB |                25.27 kB
+styles-DZD72HIP.css | styles          |  11.20 kB |                 2.79 kB
+
+                    | Initial total   | 311.16 kB |                86.94 kB
+
+Lazy chunk files    | Names           |  Raw size | Estimated transfer size
+chunk-CDZLttas.js   | -               |  46.98 kB |                 9.94 kB
+chunk-BvuMJrQ4.js   | main-layout     |   8.69 kB |                 2.56 kB
+chunk-fN1dBvjc.js   | venta-form      |   7.22 kB |                 2.63 kB
+chunk-DeucoXSk.js   | producto-form   |   5.42 kB |                 2.06 kB
+chunk-CBVil8X8.js   | login           |   5.31 kB |                 1.93 kB
+chunk-B-UEYycK.js   | venta-list      |   4.99 kB |                 1.99 kB
+chunk-DGnRGUGX.js   | producto-list   |   4.93 kB |                 1.92 kB
+chunk-R9eswRUR.js   | cuenta          |   4.81 kB |                 1.85 kB
+chunk-mpTNlOUV.js   | categoria-list  |   4.73 kB |                 1.84 kB
+chunk-dxw-JbMG.js   | inicio          |   4.14 kB |                 1.58 kB
+chunk-B7ekW0eP.js   | categoria-form  |   4.06 kB |                 1.69 kB
+chunk-BA2FNFtm.js   | venta-detail    |   3.23 kB |                 1.38 kB
+chunk-XTlg8i2G.js   | mas-vendidos    |   2.50 kB |                 1.20 kB
+chunk-CgCI1y-G.js   | -               |   1.86 kB |               607 bytes
+chunk-CwadF9Sf.js   | acceso-denegado | 783 bytes |               783 bytes
+...and 3 more lazy chunks files. Use "--verbose" to show all the files.
+
+Application bundle generation complete. [9.029 seconds] - 2026-11-07T01:46:57.230Z
+
+Output location: C:\PHARMAPROYECT\autonoma-s13\builds\optimizado
+
