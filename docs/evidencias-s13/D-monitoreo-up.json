@@ -1,0 +1,144 @@
+{
+  "anonimo": {
+    "status": "UP",
+    "groups": [
+      "liveness",
+      "readiness"
+    ]
+  },
+  "administrador": {
+    "status": "UP",
+    "components": {
+      "db": {
+        "status": "UP",
+        "details": {
+          "database": "Oracle",
+          "validationQuery": "isValid()"
+        }
+      },
+      "diskSpace": {
+        "status": "UP",
+        "details": {
+          "total": 1022452109312,
+          "free": 618251001856,
+          "threshold": 10485760,
+          "path": "C:\\PHARMAPROYECT\\PharmaBackend\\.",
+          "exists": true
+        }
+      },
+      "livenessState": {
+        "status": "UP"
+      },
+      "ping": {
+        "status": "UP"
+      },
+      "readinessState": {
+        "status": "UP"
+      },
+      "redis": {
+        "status": "UP",
+        "details": {
+          "version": "7.4.12"
+        }
+      }
+    },
+    "groups": [
+      "liveness",
+      "readiness"
+    ]
+  },
+  "ventas": {
+    "name": "http.server.requests",
+    "baseUnit": "seconds",
+    "measurements": [
+      {
+        "statistic": "COUNT",
+        "value": 1
+      },
+      {
+        "statistic": "TOTAL_TIME",
+        "value": 0.2720642
+      },
+      {
+        "statistic": "MAX",
+        "value": 0.2720642
+      }
+    ],
+    "availableTags": [
+      {
+        "tag": "exception",
+        "values": [
+          "none"
+        ]
+      },
+      {
+        "tag": "method",
+        "values": [
+          "POST"
+        ]
+      },
+      {
+        "tag": "error",
+        "values": [
+          "none"
+        ]
+      },
+      {
+        "tag": "outcome",
+        "values": [
+          "SUCCESS"
+        ]
+      },
+      {
+        "tag": "status",
+        "values": [
+          "201"
+        ]
+      }
+    ]
+  },
+  "ventasPost": {
+    "name": "http.server.requests",
+    "baseUnit": "seconds",
+    "measurements": [
+      {
+        "statistic": "COUNT",
+        "value": 1
+      },
+      {
+        "statistic": "TOTAL_TIME",
+        "value": 0.2720642
+      },
+      {
+        "statistic": "MAX",
+        "value": 0.2720642
+      }
+    ],
+    "availableTags": [
+      {
+        "tag": "exception",
+        "values": [
+          "none"
+        ]
+      },
+      {
+        "tag": "error",
+        "values": [
+          "none"
+        ]
+      },
+      {
+        "tag": "outcome",
+        "values": [
+          "SUCCESS"
+        ]
+      },
+      {
+        "tag": "status",
+        "values": [
+          "201"
+        ]
+      }
+    ]
+  }
+}

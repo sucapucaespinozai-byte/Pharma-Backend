@@ -1,0 +1,96 @@
+{
+  "textoAntes": "Consulta y administra el inventario de tu farmacia.",
+  "textoDespues": "Consulta precios y existencias actualizadas de tu farmacia.",
+  "assetsAntes": [
+    "/chunk-GJNVe9Tv.js",
+    "/main-RVNBKP2O.js",
+    "/styles-DZD72HIP.css",
+    "/chunk-9G9jUoqP.js",
+    "/chunk-B5qJwYf1.js",
+    "/chunk-BxXSa2E5.js",
+    "/chunk-Dfg2kcQd.js",
+    "/chunk-GT5ZHU7e.js"
+  ],
+  "assetsDespues": [
+    {
+      "id": "22776.79",
+      "path": "/chunk-GJNVe9Tv.js",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "disco": false,
+      "httpReal": 200,
+      "origen": "memoria"
+    },
+    {
+      "id": "22776.81",
+      "path": "/styles-DZD72HIP.css",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "disco": false,
+      "httpReal": 200,
+      "origen": "memoria"
+    },
+    {
+      "id": "22776.80",
+      "path": "/main-BIN7P7AS.js",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "disco": false,
+      "httpReal": 200,
+      "origen": "red"
+    },
+    {
+      "id": "22776.84",
+      "path": "/chunk-BXWvSQJ4.js",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "disco": false,
+      "httpReal": 200,
+      "origen": "red"
+    },
+    {
+      "id": "22776.85",
+      "path": "/chunk-BCfRojMC.js",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "disco": false,
+      "httpReal": 200,
+      "origen": "red"
+    },
+    {
+      "id": "22776.88",
+      "path": "/chunk-Dfg2kcQd.js",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "disco": false,
+      "httpReal": 200,
+      "origen": "memoria"
+    },
+    {
+      "id": "22776.87",
+      "path": "/chunk-BxVPCCSh.js",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "disco": false,
+      "httpReal": 200,
+      "origen": "red"
+    },
+    {
+      "id": "22776.89",
+      "path": "/chunk-COFr-ZUb.js",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable",
+      "disco": false,
+      "httpReal": 200,
+      "origen": "red"
+    }
+  ],
+  "nuevos": [
+    "/main-BIN7P7AS.js",
+    "/chunk-BXWvSQJ4.js",
+    "/chunk-BCfRojMC.js",
+    "/chunk-BxVPCCSh.js",
+    "/chunk-COFr-ZUb.js"
+  ],
+  "metodo": "Sin detener Nginx y sin borrar caché: copiar assets con hash; reemplazar index.html al final; conservar assets previos."
+}

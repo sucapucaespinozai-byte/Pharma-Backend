@@ -1,0 +1,4 @@
+{
+  "correcto": true,
+  "descripcion": "Solo se eliminaron los cuatro registros temporales creados por los scripts de la actividad; se conservaron los datos previos y DEMO."
+}

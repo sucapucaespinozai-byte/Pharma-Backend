@@ -1,0 +1,44 @@
+[
+  {
+    "id": "C-01",
+    "operacion": "Crear categoría",
+    "esperado": "Aparece inmediatamente",
+    "correcto": true
+  },
+  {
+    "id": "C-02",
+    "operacion": "Renombrar categoría",
+    "esperado": "AUTONOMA S13 049714429 EDITADA",
+    "obtenido": "AUTONOMA S13 049714429 EDITADA",
+    "correcto": true
+  },
+  {
+    "id": "C-03",
+    "operacion": "Editar precio",
+    "esperado": 3.75,
+    "obtenidoId": 3.75,
+    "obtenidoLista": 3.75,
+    "correcto": true
+  },
+  {
+    "id": "C-05",
+    "operacion": "Eliminar categoría sin productos",
+    "esperado": "No aparece",
+    "correcto": true
+  },
+  {
+    "id": "C-04",
+    "operacion": "Venta registrada desde SPA",
+    "esperado": 6,
+    "obtenido": 6,
+    "correcto": true,
+    "requestId": "3f47ae10-155d-47e7-bb62-4bf84c43e2f2"
+  },
+  {
+    "id": "C-06",
+    "operacion": "Redis detenido y productos en SPA",
+    "esperado": "Funciona; health DOWN",
+    "obtenido": "Lista visible; health 503 DOWN",
+    "correcto": true
+  }
+]

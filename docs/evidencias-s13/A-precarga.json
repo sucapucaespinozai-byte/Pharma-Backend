@@ -1,0 +1,154 @@
+[
+  {
+    "variante": "sin-precarga",
+    "condiciones": {
+      "latenciaMs": 80,
+      "bajadaBytesSegundo": 187500,
+      "cacheDeshabilitada": true,
+      "iteraciones": 3
+    },
+    "runs": [
+      {
+        "iteracion": 1,
+        "bytesPrimeraPantalla": 419623,
+        "ventasMs": 306.52350000000024,
+        "chunksPrimeraPantalla": [
+          "/chunk-GJNVe9Tv.js",
+          "/main-RVNBKP2O.js",
+          "/chunk-o0cz36_7.js",
+          "/chunk-CDZLttas.js",
+          "/chunk-Dfg2kcQd.js",
+          "/chunk-9G9jUoqP.js",
+          "/chunk-DKr9feyh.js",
+          "/chunk-BxXSa2E5.js",
+          "/chunk-GT5ZHU7e.js"
+        ]
+      },
+      {
+        "iteracion": 2,
+        "bytesPrimeraPantalla": 419623,
+        "ventasMs": 310.7613999999994,
+        "chunksPrimeraPantalla": [
+          "/chunk-GJNVe9Tv.js",
+          "/main-RVNBKP2O.js",
+          "/chunk-o0cz36_7.js",
+          "/chunk-CDZLttas.js",
+          "/chunk-Dfg2kcQd.js",
+          "/chunk-9G9jUoqP.js",
+          "/chunk-DKr9feyh.js",
+          "/chunk-BxXSa2E5.js",
+          "/chunk-GT5ZHU7e.js"
+        ]
+      },
+      {
+        "iteracion": 3,
+        "bytesPrimeraPantalla": 419623,
+        "ventasMs": 306.4524999999994,
+        "chunksPrimeraPantalla": [
+          "/chunk-GJNVe9Tv.js",
+          "/main-RVNBKP2O.js",
+          "/chunk-o0cz36_7.js",
+          "/chunk-CDZLttas.js",
+          "/chunk-Dfg2kcQd.js",
+          "/chunk-9G9jUoqP.js",
+          "/chunk-DKr9feyh.js",
+          "/chunk-BxXSa2E5.js",
+          "/chunk-GT5ZHU7e.js"
+        ]
+      }
+    ],
+    "mediaBytes": 419623,
+    "mediaVentasMs": 307.9124666666664
+  },
+  {
+    "variante": "con-precarga",
+    "condiciones": {
+      "latenciaMs": 80,
+      "bajadaBytesSegundo": 187500,
+      "cacheDeshabilitada": true,
+      "iteraciones": 3
+    },
+    "runs": [
+      {
+        "iteracion": 1,
+        "bytesPrimeraPantalla": 463490,
+        "ventasMs": 172.29360000000088,
+        "chunksPrimeraPantalla": [
+          "/chunk-GJNVe9Tv.js",
+          "/main-6QPHX5AI.js",
+          "/chunk-C_WGujG9.js",
+          "/chunk-CDZLttas.js",
+          "/chunk-Dfg2kcQd.js",
+          "/chunk-CwtBsNUI.js",
+          "/chunk-DBbQLhen.js",
+          "/chunk-BZHCoR4v.js",
+          "/chunk-C4LdDF0r.js",
+          "/chunk-DG7i32QH.js",
+          "/chunk-D-oWaM9j.js",
+          "/chunk-CdCt-YpJ.js",
+          "/chunk-CYFg1cYG.js",
+          "/chunk-DCWcwrPV.js",
+          "/chunk-qHbOmJqj.js",
+          "/chunk-CeQtJndK.js",
+          "/chunk-FkID_PAL.js",
+          "/chunk-Bckfrz78.js",
+          "/chunk-BZ4omxKM.js"
+        ]
+      },
+      {
+        "iteracion": 2,
+        "bytesPrimeraPantalla": 465170,
+        "ventasMs": 191.6875,
+        "chunksPrimeraPantalla": [
+          "/chunk-GJNVe9Tv.js",
+          "/main-6QPHX5AI.js",
+          "/chunk-C_WGujG9.js",
+          "/chunk-CDZLttas.js",
+          "/chunk-Dfg2kcQd.js",
+          "/chunk-CwtBsNUI.js",
+          "/chunk-DBbQLhen.js",
+          "/chunk-BZHCoR4v.js",
+          "/chunk-C4LdDF0r.js",
+          "/chunk-DG7i32QH.js",
+          "/chunk-D-oWaM9j.js",
+          "/chunk-CdCt-YpJ.js",
+          "/chunk-CYFg1cYG.js",
+          "/chunk-DCWcwrPV.js",
+          "/chunk-qHbOmJqj.js",
+          "/chunk-CeQtJndK.js",
+          "/chunk-FkID_PAL.js",
+          "/chunk-Bckfrz78.js",
+          "/chunk-BZ4omxKM.js"
+        ]
+      },
+      {
+        "iteracion": 3,
+        "bytesPrimeraPantalla": 463490,
+        "ventasMs": 174.34170000000086,
+        "chunksPrimeraPantalla": [
+          "/chunk-GJNVe9Tv.js",
+          "/main-6QPHX5AI.js",
+          "/chunk-C_WGujG9.js",
+          "/chunk-CDZLttas.js",
+          "/chunk-Dfg2kcQd.js",
+          "/chunk-CwtBsNUI.js",
+          "/chunk-DBbQLhen.js",
+          "/chunk-BZHCoR4v.js",
+          "/chunk-C4LdDF0r.js",
+          "/chunk-DG7i32QH.js",
+          "/chunk-D-oWaM9j.js",
+          "/chunk-CdCt-YpJ.js",
+          "/chunk-CYFg1cYG.js",
+          "/chunk-DCWcwrPV.js",
+          "/chunk-qHbOmJqj.js",
+          "/chunk-CeQtJndK.js",
+          "/chunk-FkID_PAL.js",
+          "/chunk-Bckfrz78.js",
+          "/chunk-BZ4omxKM.js"
+        ]
+      }
+    ],
+    "mediaBytes": 464050,
+    "mediaVentasMs": 179.4409333333339
+  }
+]
