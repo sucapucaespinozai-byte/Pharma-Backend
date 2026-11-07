@@ -1,0 +1,11 @@
+{
+  "archivo": "logs/pharma-backend.log",
+  "pruebas": {
+    "palabrasPasswordBearerSecret": 0,
+    "patronJwtCompleto": 0,
+    "dniOchoDigitosFueraDeUuid": 0,
+    "valoresPrivadosConocidos": 0
+  },
+  "correcto": true,
+  "nota": "Se excluyen los UUID al buscar patrones de DNI; no se copian valores privados al informe."
+}

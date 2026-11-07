@@ -175,6 +175,8 @@ public class VentaServicelmpl implements VentaService {
     @Transactional
     @CacheEvict(cacheNames = "productos", allEntries = true)
     public VentaResponseDTO crear(VentaRequestDTO request) {
+        long inicioVenta = System.nanoTime();
+        log.info("Inicio registrar venta | lineas={}", request.getDetalles() == null ? 0 : request.getDetalles().size());
         Cliente cliente = clienteRepository.findById(request.getClienteId())
                 .orElseThrow(() -> new RecursosNoEncontradoException("Cliente no encontrado con id: " + request.getClienteId()));
 
@@ -229,7 +231,10 @@ public class VentaServicelmpl implements VentaService {
 
         Venta guardada = ventaRepository.save(venta);
 
-        return convertirResponse(guardada);
+        VentaResponseDTO respuesta = convertirResponse(guardada);
+        log.info("Fin registrar venta | ventaId={} | lineas={} | duracionMs={}", guardada.getId(),
+                request.getDetalles().size(), java.util.concurrent.TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - inicioVenta));
+        return respuesta;
     }
 
     @Override

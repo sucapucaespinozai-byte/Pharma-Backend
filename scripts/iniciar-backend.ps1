@@ -1,24 +1,27 @@
 param(
     [ValidateSet('local', 'dev', 'prod')][string]$Perfil = 'prod',
-    [switch]$Reiniciar
+    [switch]$Reiniciar,
+    [ValidatePattern('^\d+(ms|s|m|h)$')][string]$CacheTtl = '10m'
 )
 $ErrorActionPreference = 'Stop'
 $raizPractica = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 $backendPractica = Join-Path $raizPractica 'PharmaBackend'
 $frontendPractica = Join-Path $raizPractica 'PharmaSoft'
-$javaPractica = 'C:/Users/sucap/.gradle/jdks/eclipse_adoptium-21-amd64-windows.2/bin/java.exe'
+$javaPractica = if ($env:JAVA_HOME) { Join-Path $env:JAVA_HOME 'bin/java.exe' } else { 'C:/Users/sucap/.gradle/jdks/eclipse_adoptium-21-amd64-windows.2/bin/java.exe' }
 $jarPractica = Join-Path $backendPractica 'target/tienda-0.0.1-SNAPSHOT.jar'
 if (!(Test-Path -LiteralPath $javaPractica)) { throw 'No se encuentra el Java 21 configurado.' }
 if (!(Test-Path -LiteralPath $jarPractica)) { throw 'Primero compila PharmaBackend: .\mvnw.cmd package -DskipTests' }
 $localPractica = @{}
-Get-Content (Join-Path $backendPractica 'src/main/resources/application-local.properties') | ForEach-Object {
+$archivoLocalPractica = Join-Path $backendPractica 'src/main/resources/application-local.properties'
+if (Test-Path -LiteralPath $archivoLocalPractica) { Get-Content $archivoLocalPractica | ForEach-Object {
     if ($_ -match '^([^#=]+)=(.*)$') { $localPractica[$matches[1]] = $matches[2] }
-}
-$env:FRONTEND_ORIGINS = 'http://localhost:4200,http://127.0.0.1:4200,http://localhost:8081'
+} }
+if (!$env:FRONTEND_ORIGINS) { $env:FRONTEND_ORIGINS = 'http://localhost:4200,http://127.0.0.1:4200,http://localhost:8081' }
 if ($Perfil -eq 'prod') {
-    $env:DB_URL = 'jdbc:oracle:thin:@//localhost:1522/FREEPDB1'
-    $env:DB_USERNAME = 'tienda'
-    $env:DB_PASSWORD = $localPractica['spring.datasource.password']
+    if (!$env:DB_URL) { $env:DB_URL = 'jdbc:oracle:thin:@//localhost:1522/FREEPDB1' }
+    if (!$env:DB_USERNAME) { $env:DB_USERNAME = 'tienda' }
+    if (!$env:DB_PASSWORD) { $env:DB_PASSWORD = $localPractica['spring.datasource.password'] }
+    if (!$env:DB_PASSWORD) { throw 'Configura DB_PASSWORD por entorno o en application-local.properties (excluido de Git).' }
     $carpetaLocalPractica = Join-Path $backendPractica '.local'
     New-Item -ItemType Directory -Force $carpetaLocalPractica | Out-Null
     $claveLocalPractica = Join-Path $carpetaLocalPractica 'jwt-prod.txt'
@@ -28,8 +31,7 @@ if ($Perfil -eq 'prod') {
         try { $generadorPractica.GetBytes($bytesClavePractica) } finally { $generadorPractica.Dispose() }
         [Convert]::ToBase64String($bytesClavePractica) | Set-Content -LiteralPath $claveLocalPractica
     }
-    $env:JWT_SECRET = (Get-Content -LiteralPath $claveLocalPractica -Raw).Trim()
-    $env:FRONTEND_ORIGINS = 'http://localhost:4200,http://127.0.0.1:4200,http://localhost:8081'
+    if (!$env:JWT_SECRET) { $env:JWT_SECRET = (Get-Content -LiteralPath $claveLocalPractica -Raw).Trim() }
 }
 $escuchaPractica = Get-NetTCPConnection -State Listen -LocalPort 8080 -ErrorAction SilentlyContinue | Select-Object -First 1
 if ($escuchaPractica) {
@@ -44,7 +46,7 @@ if ($escuchaPractica) {
 }
 if (!$escuchaPractica) {
     New-Item -ItemType Directory -Force (Join-Path $backendPractica 'logs') | Out-Null
-    Start-Process -FilePath $javaPractica -ArgumentList @('-jar', $jarPractica, '--server.port=8080', "--spring.profiles.active=$Perfil") -WorkingDirectory $backendPractica -WindowStyle Hidden -RedirectStandardOutput (Join-Path $backendPractica 'logs/consola.log') -RedirectStandardError (Join-Path $backendPractica 'logs/errores-java.log') | Out-Null
+    Start-Process -FilePath $javaPractica -ArgumentList @('-jar', $jarPractica, '--server.port=8080', "--spring.profiles.active=$Perfil", "--spring.cache.redis.time-to-live=$CacheTtl") -WorkingDirectory $backendPractica -WindowStyle Hidden -RedirectStandardOutput (Join-Path $backendPractica 'logs/consola.log') -RedirectStandardError (Join-Path $backendPractica 'logs/errores-java.log') | Out-Null
     $backendListoPractica = $false
     for ($intentoPractica=0; $intentoPractica -lt 25; $intentoPractica++) {
         try { Invoke-WebRequest 'http://localhost:8080/api/v1/health' -UseBasicParsing -TimeoutSec 2 | Out-Null; $backendListoPractica=$true; break } catch { Start-Sleep -Seconds 1 }

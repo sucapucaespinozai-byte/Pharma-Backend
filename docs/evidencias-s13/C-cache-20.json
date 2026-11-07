@@ -1,0 +1,267 @@
+{
+  "procedimiento": "Backend recién iniciado, claves concretas eliminadas, 20 GET secuenciales por catálogo, cliente Node fetch, mismo Oracle y proceso.",
+  "caches": [
+    {
+      "nombre": "categorias",
+      "peticiones": [
+        {
+          "n": 1,
+          "status": 200,
+          "durationMs": 1083.4347000000002,
+          "requestId": "86eddc35-a0fe-4646-b259-660eb348cabc"
+        },
+        {
+          "n": 2,
+          "status": 200,
+          "durationMs": 49.4666000000002,
+          "requestId": "da6f9394-4945-48f2-bd61-2b447f950a69"
+        },
+        {
+          "n": 3,
+          "status": 200,
+          "durationMs": 45.25049999999965,
+          "requestId": "5e9b3262-35bb-467e-9572-b8cea9311607"
+        },
+        {
+          "n": 4,
+          "status": 200,
+          "durationMs": 44.0005000000001,
+          "requestId": "9544e4d9-ed40-4228-a14e-bace2173368a"
+        },
+        {
+          "n": 5,
+          "status": 200,
+          "durationMs": 56.157700000000204,
+          "requestId": "052490d7-e01e-4c3e-a881-6bdaedfe1971"
+        },
+        {
+          "n": 6,
+          "status": 200,
+          "durationMs": 41.99479999999994,
+          "requestId": "5bbcc4c4-8920-4c83-ad53-e9ab7ae34496"
+        },
+        {
+          "n": 7,
+          "status": 200,
+          "durationMs": 58.409799999999905,
+          "requestId": "e4d1c987-d56f-4751-9bc2-483cea55da33"
+        },
+        {
+          "n": 8,
+          "status": 200,
+          "durationMs": 42.79269999999997,
+          "requestId": "51b49098-b328-450f-a83d-2fdec50a9ef7"
+        },
+        {
+          "n": 9,
+          "status": 200,
+          "durationMs": 49.315700000000106,
+          "requestId": "ab81144a-1446-4928-bb85-2fe20fc1f663"
+        },
+        {
+          "n": 10,
+          "status": 200,
+          "durationMs": 42.13619999999992,
+          "requestId": "094febca-90da-429f-9d73-ee0b76ef6182"
+        },
+        {
+          "n": 11,
+          "status": 200,
+          "durationMs": 47.503799999999956,
+          "requestId": "3b7bd3e0-24e1-4f08-b1f9-5414cd31efbc"
+        },
+        {
+          "n": 12,
+          "status": 200,
+          "durationMs": 44.73840000000018,
+          "requestId": "77c5cd1a-e920-4633-ae2f-40f675dc2771"
+        },
+        {
+          "n": 13,
+          "status": 200,
+          "durationMs": 36.66830000000027,
+          "requestId": "6d106050-2d6c-4277-98c2-ec3223e597d9"
+        },
+        {
+          "n": 14,
+          "status": 200,
+          "durationMs": 38.490499999999884,
+          "requestId": "0f249369-e063-4932-84ec-5b56ad9ba1a9"
+        },
+        {
+          "n": 15,
+          "status": 200,
+          "durationMs": 48.19890000000032,
+          "requestId": "7d91b41e-7356-49b9-bde3-cb610b8ed71f"
+        },
+        {
+          "n": 16,
+          "status": 200,
+          "durationMs": 45.72019999999975,
+          "requestId": "661a7898-3ed8-4e6c-85f7-fad3a5a8cb20"
+        },
+        {
+          "n": 17,
+          "status": 200,
+          "durationMs": 46.964300000000094,
+          "requestId": "f6900a37-a422-4bac-b93a-5d62f1f01fdb"
+        },
+        {
+          "n": 18,
+          "status": 200,
+          "durationMs": 44.876000000000204,
+          "requestId": "3916f0f3-3307-4496-9592-cf9c84caa6f6"
+        },
+        {
+          "n": 19,
+          "status": 200,
+          "durationMs": 46.323999999999614,
+          "requestId": "c268bc8e-49fc-407a-94b3-987f804f6aa4"
+        },
+        {
+          "n": 20,
+          "status": 200,
+          "durationMs": 45.861299999999574,
+          "requestId": "66b4e229-3979-4579-a2ae-7078074e17f2"
+        }
+      ],
+      "hits": 19,
+      "misses": 1,
+      "tasaAciertos": 0.95,
+      "primerFalloMs": 1083.4347000000002,
+      "mediaAciertosMs": 46.04579999999999,
+      "ttl": 599
+    },
+    {
+      "nombre": "productos",
+      "peticiones": [
+        {
+          "n": 1,
+          "status": 200,
+          "durationMs": 223.66550000000007,
+          "requestId": "dfb71866-8021-48e9-966b-3f4e72be41d0"
+        },
+        {
+          "n": 2,
+          "status": 200,
+          "durationMs": 48.81999999999971,
+          "requestId": "bc9375a1-30ce-49f4-862f-c36c0a425b94"
+        },
+        {
+          "n": 3,
+          "status": 200,
+          "durationMs": 38.821500000000015,
+          "requestId": "4cd523bf-6645-4989-8af9-c20946705b3a"
+        },
+        {
+          "n": 4,
+          "status": 200,
+          "durationMs": 53.849199999999655,
+          "requestId": "d51f56b0-b873-4765-bdc4-b8f2887c323f"
+        },
+        {
+          "n": 5,
+          "status": 200,
+          "durationMs": 44.251000000000204,
+          "requestId": "542faefe-2017-4e2d-80f1-5ded0b7c87c7"
+        },
+        {
+          "n": 6,
+          "status": 200,
+          "durationMs": 46.61120000000028,
+          "requestId": "bb5bb6d0-0a2c-41e2-a29b-dc034fe2eec4"
+        },
+        {
+          "n": 7,
+          "status": 200,
+          "durationMs": 45.644900000000234,
+          "requestId": "2faef24f-d67e-4603-b96c-567fad2dda4d"
+        },
+        {
+          "n": 8,
+          "status": 200,
+          "durationMs": 49.983900000000176,
+          "requestId": "b19b5709-0513-4f6a-83dd-2e5a290ce0d0"
+        },
+        {
+          "n": 9,
+          "status": 200,
+          "durationMs": 44.66859999999997,
+          "requestId": "f3896ac5-be94-4001-80d9-1d42a7e78628"
+        },
+        {
+          "n": 10,
+          "status": 200,
+          "durationMs": 40.91859999999997,
+          "requestId": "e59161f1-9e73-4fee-bff6-0257696e7d45"
+        },
+        {
+          "n": 11,
+          "status": 200,
+          "durationMs": 36.39049999999952,
+          "requestId": "1f5ff979-ac63-4c9c-b978-b6aef7feeaeb"
+        },
+        {
+          "n": 12,
+          "status": 200,
+          "durationMs": 43.55439999999999,
+          "requestId": "5424d942-2ea8-4ba3-bbba-2f06ef164821"
+        },
+        {
+          "n": 13,
+          "status": 200,
+          "durationMs": 45.53160000000025,
+          "requestId": "a1c5e8e5-62ff-4111-8131-8b7332df31a2"
+        },
+        {
+          "n": 14,
+          "status": 200,
+          "durationMs": 41.60789999999997,
+          "requestId": "96e6c429-799b-40c3-a46f-266e3d34e107"
+        },
+        {
+          "n": 15,
+          "status": 200,
+          "durationMs": 43.33359999999993,
+          "requestId": "4000e7b4-7cb2-459e-bf53-2c1a57d1129b"
+        },
+        {
+          "n": 16,
+          "status": 200,
+          "durationMs": 41.3134,
+          "requestId": "919f56c0-57b7-4ffd-9bd9-f3538af5b542"
+        },
+        {
+          "n": 17,
+          "status": 200,
+          "durationMs": 38.830299999999625,
+          "requestId": "2a37945f-1544-4d79-8b4a-bb9cd787c09f"
+        },
+        {
+          "n": 18,
+          "status": 200,
+          "durationMs": 36.065700000000106,
+          "requestId": "f0d4d3c9-108c-465b-bbec-48a19ae3a82f"
+        },
+        {
+          "n": 19,
+          "status": 200,
+          "durationMs": 38.44200000000001,
+          "requestId": "18c3b31e-0ada-464a-aeb8-ea6f56ebf6ec"
+        },
+        {
+          "n": 20,
+          "status": 200,
+          "durationMs": 47.29200000000037,
+          "requestId": "f2abf1e5-595d-4aea-b5b9-8dd067721345"
+        }
+      ],
+      "hits": 19,
+      "misses": 1,
+      "tasaAciertos": 0.95,
+      "primerFalloMs": 223.66550000000007,
+      "mediaAciertosMs": 43.470015789473685,
+      "ttl": 599
+    }
+  ]
+}

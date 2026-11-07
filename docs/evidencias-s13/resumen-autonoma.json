@@ -1,0 +1,270 @@
+{
+  "inicialAntes": 311294,
+  "inicialOptimizado": 311157,
+  "ahorroRaw": 137,
+  "inicialFinal": 313207,
+  "precarga": [
+    {
+      "variante": "sin-precarga",
+      "condiciones": {
+        "latenciaMs": 80,
+        "bajadaBytesSegundo": 187500,
+        "cacheDeshabilitada": true,
+        "iteraciones": 3
+      },
+      "runs": [
+        {
+          "iteracion": 1,
+          "bytesPrimeraPantalla": 419623,
+          "ventasMs": 306.52350000000024,
+          "chunksPrimeraPantalla": [
+            "/chunk-GJNVe9Tv.js",
+            "/main-RVNBKP2O.js",
+            "/chunk-o0cz36_7.js",
+            "/chunk-CDZLttas.js",
+            "/chunk-Dfg2kcQd.js",
+            "/chunk-9G9jUoqP.js",
+            "/chunk-DKr9feyh.js",
+            "/chunk-BxXSa2E5.js",
+            "/chunk-GT5ZHU7e.js"
+          ]
+        },
+        {
+          "iteracion": 2,
+          "bytesPrimeraPantalla": 419623,
+          "ventasMs": 310.7613999999994,
+          "chunksPrimeraPantalla": [
+            "/chunk-GJNVe9Tv.js",
+            "/main-RVNBKP2O.js",
+            "/chunk-o0cz36_7.js",
+            "/chunk-CDZLttas.js",
+            "/chunk-Dfg2kcQd.js",
+            "/chunk-9G9jUoqP.js",
+            "/chunk-DKr9feyh.js",
+            "/chunk-BxXSa2E5.js",
+            "/chunk-GT5ZHU7e.js"
+          ]
+        },
+        {
+          "iteracion": 3,
+          "bytesPrimeraPantalla": 419623,
+          "ventasMs": 306.4524999999994,
+          "chunksPrimeraPantalla": [
+            "/chunk-GJNVe9Tv.js",
+            "/main-RVNBKP2O.js",
+            "/chunk-o0cz36_7.js",
+            "/chunk-CDZLttas.js",
+            "/chunk-Dfg2kcQd.js",
+            "/chunk-9G9jUoqP.js",
+            "/chunk-DKr9feyh.js",
+            "/chunk-BxXSa2E5.js",
+            "/chunk-GT5ZHU7e.js"
+          ]
+        }
+      ],
+      "mediaBytes": 419623,
+      "mediaVentasMs": 307.9124666666664
+    },
+    {
+      "variante": "con-precarga",
+      "condiciones": {
+        "latenciaMs": 80,
+        "bajadaBytesSegundo": 187500,
+        "cacheDeshabilitada": true,
+        "iteraciones": 3
+      },
+      "runs": [
+        {
+          "iteracion": 1,
+          "bytesPrimeraPantalla": 463490,
+          "ventasMs": 172.29360000000088,
+          "chunksPrimeraPantalla": [
+            "/chunk-GJNVe9Tv.js",
+            "/main-6QPHX5AI.js",
+            "/chunk-C_WGujG9.js",
+            "/chunk-CDZLttas.js",
+            "/chunk-Dfg2kcQd.js",
+            "/chunk-CwtBsNUI.js",
+            "/chunk-DBbQLhen.js",
+            "/chunk-BZHCoR4v.js",
+            "/chunk-C4LdDF0r.js",
+            "/chunk-DG7i32QH.js",
+            "/chunk-D-oWaM9j.js",
+            "/chunk-CdCt-YpJ.js",
+            "/chunk-CYFg1cYG.js",
+            "/chunk-DCWcwrPV.js",
+            "/chunk-qHbOmJqj.js",
+            "/chunk-CeQtJndK.js",
+            "/chunk-FkID_PAL.js",
+            "/chunk-Bckfrz78.js",
+            "/chunk-BZ4omxKM.js"
+          ]
+        },
+        {
+          "iteracion": 2,
+          "bytesPrimeraPantalla": 465170,
+          "ventasMs": 191.6875,
+          "chunksPrimeraPantalla": [
+            "/chunk-GJNVe9Tv.js",
+            "/main-6QPHX5AI.js",
+            "/chunk-C_WGujG9.js",
+            "/chunk-CDZLttas.js",
+            "/chunk-Dfg2kcQd.js",
+            "/chunk-CwtBsNUI.js",
+            "/chunk-DBbQLhen.js",
+            "/chunk-BZHCoR4v.js",
+            "/chunk-C4LdDF0r.js",
+            "/chunk-DG7i32QH.js",
+            "/chunk-D-oWaM9j.js",
+            "/chunk-CdCt-YpJ.js",
+            "/chunk-CYFg1cYG.js",
+            "/chunk-DCWcwrPV.js",
+            "/chunk-qHbOmJqj.js",
+            "/chunk-CeQtJndK.js",
+            "/chunk-FkID_PAL.js",
+            "/chunk-Bckfrz78.js",
+            "/chunk-BZ4omxKM.js"
+          ]
+        },
+        {
+          "iteracion": 3,
+          "bytesPrimeraPantalla": 463490,
+          "ventasMs": 174.34170000000086,
+          "chunksPrimeraPantalla": [
+            "/chunk-GJNVe9Tv.js",
+            "/main-6QPHX5AI.js",
+            "/chunk-C_WGujG9.js",
+            "/chunk-CDZLttas.js",
+            "/chunk-Dfg2kcQd.js",
+            "/chunk-CwtBsNUI.js",
+            "/chunk-DBbQLhen.js",
+            "/chunk-BZHCoR4v.js",
+            "/chunk-C4LdDF0r.js",
+            "/chunk-DG7i32QH.js",
+            "/chunk-D-oWaM9j.js",
+            "/chunk-CdCt-YpJ.js",
+            "/chunk-CYFg1cYG.js",
+            "/chunk-DCWcwrPV.js",
+            "/chunk-qHbOmJqj.js",
+            "/chunk-CeQtJndK.js",
+            "/chunk-FkID_PAL.js",
+            "/chunk-Bckfrz78.js",
+            "/chunk-BZ4omxKM.js"
+          ]
+        }
+      ],
+      "mediaBytes": 464050,
+      "mediaVentasMs": 179.4409333333339
+    }
+  ],
+  "matrizCorrecta": true,
+  "ttlCorrecto": true,
+  "auditoriaCorrecta": true,
+  "git": {
+    "PharmaBackend": {
+      "commits": [
+        [
+          "79e2f17",
+          "2026-11-07",
+          "docs(s13): informe autonomo con mediciones, capturas y pendientes reales"
+        ],
+        [
+          "f816b68",
+          "2026-11-07",
+          "docs(deploy): arquitectura, rollback y mediciones reproducibles"
+        ],
+        [
+          "222ae7d",
+          "2026-11-07",
+          "fix(deploy): credenciales externas y TTL temporal verificable"
+        ],
+        [
+          "d135538",
+          "2026-11-07",
+          "feat(soporte): requestId en errores y trazabilidad segura de ventas"
+        ],
+        [
+          "a737f0b",
+          "2026-11-05",
+          "docs: sincronizar eliminacion de documentos del backend"
+        ],
+        [
+          "b50a876",
+          "2026-11-05",
+          "feat: publicar PharmaBackend con JWT, Redis y configuracion de produccion"
+        ]
+      ],
+      "fechas": [
+        "2026-11-05",
+        "2026-11-07"
+      ]
+    },
+    "PharmaSoft": {
+      "commits": [
+        [
+          "d819b35",
+          "2026-11-07",
+          "docs(deploy): arquitectura, variables y recomendaciones para tres locales"
+        ],
+        [
+          "2f1aa0b",
+          "2026-11-07",
+          "feat(soporte): codigo de seguimiento y experimento de precarga"
+        ],
+        [
+          "4464d9d",
+          "2026-11-07",
+          "perf(layout): retirar CommonModule innecesario con medicion antes y despues"
+        ],
+        [
+          "a343902",
+          "2026-11-05",
+          "feat: actualizar main con PharmaSoft y optimizaciones de sesion 13"
+        ],
+        [
+          "98aa084",
+          "2026-11-05",
+          "docs: resultados reales y recorrido de la practica integrada"
+        ],
+        [
+          "0539368",
+          "2026-11-05",
+          "chore(deploy): Nginx, cache del navegador y arranque local"
+        ],
+        [
+          "c5b8e8b",
+          "2026-11-05",
+          "build: entornos, budgets y adaptacion al API paginado"
+        ],
+        [
+          "74c342f",
+          "2026-11-05",
+          "perf(inicio): carga diferida del layout y reporte con permisos"
+        ]
+      ],
+      "fechas": [
+        "2026-10-22",
+        "2026-10-29",
+        "2026-11-05",
+        "2026-11-07"
+      ]
+    }
+  },
+  "prs": [
+    {
+      "repositorio": "Pharma-Backend",
+      "url": "https://github.com/sucapucaespinozai-byte/Pharma-Backend/pull/1",
+      "numero": 1,
+      "base": "develop",
+      "rama": "feature/autonoma-s13-espinoza"
+    },
+    {
+      "repositorio": "Fronted",
+      "url": "https://github.com/sucapucaespinozai-byte/Fronted/pull/1",
+      "numero": 1,
+      "base": "develop",
+      "rama": "feature/autonoma-s13-espinoza"
+    }
+  ],
+  "pendienteCalendario": true
+}
