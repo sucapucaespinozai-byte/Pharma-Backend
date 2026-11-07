@@ -164,6 +164,21 @@
     "PharmaBackend": {
       "commits": [
         [
+          "615e6ff",
+          "2026-11-07",
+          "fix(seguridad): excluir configuracion privada del JAR de produccion"
+        ],
+        [
+          "a93d883",
+          "2026-11-07",
+          "docs(informe): precisar atribucion de bytes y revisar entrega final"
+        ],
+        [
+          "2269120",
+          "2026-11-07",
+          "docs(s13): enlazar PR y conservar logs de medicion revisados"
+        ],
+        [
           "79e2f17",
           "2026-11-07",
           "docs(s13): informe autonomo con mediciones, capturas y pendientes reales"
@@ -187,11 +202,6 @@
           "a737f0b",
           "2026-11-05",
           "docs: sincronizar eliminacion de documentos del backend"
-        ],
-        [
-          "b50a876",
-          "2026-11-05",
-          "feat: publicar PharmaBackend con JWT, Redis y configuracion de produccion"
         ]
       ],
       "fechas": [
