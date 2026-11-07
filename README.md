@@ -38,7 +38,9 @@ HTTPS 443 es una recomendación pendiente, no una función ya configurada.
 | REDIS_PASSWORD | Autenticación de Redis cuando se configure en producción |
 
 No se publican valores reales. application-local.properties, .local/ y logs/ están
-excluidos de Git. No copies esos archivos a un repositorio ni uses la clave de
+excluidos de Git; application-local.properties también se excluye del JAR. El
+perfil local activa dev e importa ese archivo solo desde el sistema de archivos.
+Prod no importa esa configuración de desarrollo. No copies esos archivos a un repositorio ni uses la clave de
 desarrollo para producción. Las credenciales de las pruebas se leen de un archivo
 local ignorado o del entorno, nunca de las capturas o informes.
 
