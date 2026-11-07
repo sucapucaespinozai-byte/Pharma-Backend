@@ -30,6 +30,7 @@ public class GlobalExceptionHandler {
                 request.getRequestURI(),
                 null
         );
+        error.setRequestId(org.slf4j.MDC.get("requestId"));
 
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(error);
     }
@@ -47,6 +48,7 @@ public class GlobalExceptionHandler {
                 request.getRequestURI(),
                 null
         );
+        error.setRequestId(org.slf4j.MDC.get("requestId"));
 
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(error);
     }
@@ -64,6 +66,7 @@ public class GlobalExceptionHandler {
                 request.getRequestURI(),
                 null
         );
+        error.setRequestId(org.slf4j.MDC.get("requestId"));
 
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
@@ -83,6 +86,7 @@ public class GlobalExceptionHandler {
                 request.getRequestURI(),
                 null
         );
+        error.setRequestId(org.slf4j.MDC.get("requestId"));
 
         return ResponseEntity
                 .status(HttpStatus.CONFLICT)
@@ -113,6 +117,7 @@ public class GlobalExceptionHandler {
                 request.getRequestURI(),
                 validationErrors
         );
+        error.setRequestId(org.slf4j.MDC.get("requestId"));
 
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)

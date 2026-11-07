@@ -35,6 +35,7 @@ public class SecurityErrorWriter {
         );
 
         response.setStatus(status.value());
+        error.setRequestId(org.slf4j.MDC.get("requestId"));
         response.setCharacterEncoding(StandardCharsets.UTF_8.name());
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         objectMapper.writeValue(response.getOutputStream(), error);
