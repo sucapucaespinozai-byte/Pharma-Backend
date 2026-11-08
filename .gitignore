@@ -37,5 +37,4 @@ src/main/resources/application-local.properties
 logs/
 .local/
 *.log
-!docs/evidencias-s13/*.log
 src/main/resources/db/migration/*.sql.ts

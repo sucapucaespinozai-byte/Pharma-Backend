@@ -105,6 +105,6 @@ En un servidor usa un gestor de procesos y la configuración de su propio entorn
 
 ## Actividad autónoma S13
 
-Informe: [docs/informe-s13.pdf](docs/informe-s13.pdf). Mediciones y capturas en
-docs/evidencias-s13/. El informe distingue pruebas reales, simulación de red y
-pendientes operativos. No se añade una presentación a las pantallas del negocio.
+El informe, las capturas para la presentación y las herramientas de medición
+se entregan por separado. El proyecto conserva el backend, sus pruebas y su
+lanzador; no contiene el informe PDF ni las capturas académicas.

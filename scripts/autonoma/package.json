@@ -1,9 +1,0 @@
-{
-  "name": "pharmabackend-mediciones-s13",
-  "private": true,
-  "version": "1.0.0",
-  "description": "Scripts de medici\u00f3n del laboratorio, no dependencias del servidor",
-  "devDependencies": {
-    "playwright": "1.62.1"
-  }
-}

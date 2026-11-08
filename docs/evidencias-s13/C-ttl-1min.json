@@ -1,9 +1,0 @@
-{
-  "inicio": "2026-11-07T11:20:19.285Z",
-  "fin": "2026-11-07T11:21:22.098Z",
-  "ttlInicial": 60,
-  "ttlExpirado": -2,
-  "ttlRegenerado": 60,
-  "httpTrasExpirar": 200,
-  "correcto": true
-}
