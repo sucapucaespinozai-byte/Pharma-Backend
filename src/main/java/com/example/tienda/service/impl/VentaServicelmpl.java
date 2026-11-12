@@ -37,14 +37,16 @@ public class VentaServicelmpl implements VentaService {
     private final VentaRepository ventaRepository;
     private final ClienteRepository clienteRepository;
     private final ProductoRepository productoRepository;
+    private final org.springframework.context.ApplicationEventPublisher eventos;
 
     public VentaServicelmpl(
             VentaRepository ventaRepository,
             ClienteRepository clienteRepository,
-            ProductoRepository productoRepository) {
+            ProductoRepository productoRepository, org.springframework.context.ApplicationEventPublisher eventos) {
         this.ventaRepository = ventaRepository;
         this.clienteRepository = clienteRepository;
         this.productoRepository = productoRepository;
+        this.eventos=eventos;
     }
 
     private VentaResponseDTO convertirResponse(Venta venta) {
@@ -69,7 +71,7 @@ public class VentaServicelmpl implements VentaService {
                 clienteNombre,
                 venta.getEstado().name(),
                 venta.getTotal(),
-                detalles
+                detalles, venta.getCreadoPor()
         );
     }
 
@@ -82,7 +84,7 @@ public class VentaServicelmpl implements VentaService {
             throw new ReglaNegocioException(
                     "El campo de ordenamiento '"
                             + campo
-                            + "' no está permitido. Campos válidos: "
+                            + "' no estÃ¡ permitido. Campos vÃ¡lidos: "
                             + CAMPOS_ORDENABLES);
         }
 
@@ -93,9 +95,9 @@ public class VentaServicelmpl implements VentaService {
         if (!sentido.equalsIgnoreCase("asc")
                 && !sentido.equalsIgnoreCase("desc")) {
             throw new ReglaNegocioException(
-                    "La dirección de ordenamiento '"
+                    "La direcciÃ³n de ordenamiento '"
                             + sentido
-                            + "' no está permitida. Valores válidos: asc, desc");
+                            + "' no estÃ¡ permitida. Valores vÃ¡lidos: asc, desc");
         }
 
         return sentido.equalsIgnoreCase("asc")
@@ -125,50 +127,24 @@ public class VentaServicelmpl implements VentaService {
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public List<VentaResponseDTO> buscar(Long clienteId, EstadoVenta estado, LocalDate desde, LocalDate hasta, String ordenarPor, String direccion) {
-        long inicio = System.currentTimeMillis();
-
-        log.info("Inicio buscar ventas | clienteId={} | estado={} | "
-                        + "desde={} | hasta={} | ordenarPor={} | direccion={}",
-                clienteId, estado, desde, hasta, ordenarPor, direccion);
-
-        if (desde != null
-                && hasta != null
-                && desde.isAfter(hasta)) {
-
-            throw new ReglaNegocioException(
-                    "El rango de fechas es inválido: 'desde' ("
-                            + desde
-                            + ") es posterior a 'hasta' ("
-                            + hasta + ")");
-        }
-
-        Sort sort = construirSort(ordenarPor, direccion);
-
-        LocalDateTime desdeHora = (desde == null)
-                ? null
-                : desde.atStartOfDay();
-
-        LocalDateTime hastaHora = (hasta == null)
-                ? null
-                : hasta.atTime(LocalTime.MAX);
-
-        List<VentaResponseDTO> resultado =
-                ventaRepository
-                        .buscar(clienteId, estado, desdeHora, hastaHora, sort)
-                        .stream()
-                        .map(this::convertirResponse)
-                        .toList();
-
-        log.info("Fin buscar ventas | clienteId={} | estado={} | "
-                        + "desde={} | hasta={} | orden={} {} | "
-                        + "filas={} | duracionMs={}",
-                clienteId, estado, desde, hasta, ordenarPor, direccion,
-                resultado.size(),
-                System.currentTimeMillis() - inicio);
-
-        return resultado;
+    @Transactional(readOnly=true)
+    public List<VentaResponseDTO> buscar(Long clienteId,EstadoVenta estado,LocalDate desde,LocalDate hasta,String ordenarPor,String direccion) {
+        return buscar(clienteId,estado,desde,hasta,ordenarPor,direccion,0,100).content();
+    }
+    @Override
+    @Transactional(readOnly=true)
+    public com.example.tienda.dto.PaginaResponseDTO<VentaResponseDTO> buscar(Long clienteId,EstadoVenta estado,LocalDate desde,LocalDate hasta,String ordenarPor,String direccion,int pagina,int tamanio) {
+        if(desde!=null&&hasta!=null&&desde.isAfter(hasta))throw new ReglaNegocioException("El rango de fechas es inválido");
+        var pageable=com.example.tienda.util.PaginacionUtil.construir(pagina,tamanio,ordenarPor,direccion,CAMPOS_ORDENABLES);
+        var resultado=ventaRepository.findAll((r,q,cb)->{
+            var p=new java.util.ArrayList<jakarta.persistence.criteria.Predicate>();
+            if(clienteId!=null)p.add(cb.equal(r.get("cliente").get("id"),clienteId));
+            if(estado!=null)p.add(cb.equal(r.get("estado"),estado));
+            if(desde!=null)p.add(cb.greaterThanOrEqualTo(r.get("fecha"),desde.atStartOfDay()));
+            if(hasta!=null)p.add(cb.lessThan(r.get("fecha"),hasta.plusDays(1).atStartOfDay()));
+            return cb.and(p.toArray(jakarta.persistence.criteria.Predicate[]::new));
+        },pageable);
+        return com.example.tienda.dto.PaginaResponseDTO.de(resultado.map(this::convertirResponse));
     }
 
     @Override
@@ -185,7 +161,7 @@ public class VentaServicelmpl implements VentaService {
         }
 
         if (request.getDetalles() == null || request.getDetalles().isEmpty()) {
-            throw new IllegalArgumentException("La lista de detalles no puede estar vacía.");
+            throw new IllegalArgumentException("La lista de detalles no puede estar vacÃ­a.");
         }
 
         Venta venta = new Venta();
@@ -230,6 +206,7 @@ public class VentaServicelmpl implements VentaService {
         venta.setTotal(total);
 
         Venta guardada = ventaRepository.save(venta);
+        eventos.publishEvent(com.example.tienda.auditoria.EventoAuditoria.de("VENTA_REGISTRADA","Venta",guardada.getId(),"total="+guardada.getTotal()+" | items="+guardada.getDetalles().size()));
 
         VentaResponseDTO respuesta = convertirResponse(guardada);
         log.info("Fin registrar venta | ventaId={} | lineas={} | duracionMs={}", guardada.getId(),

@@ -5,6 +5,7 @@ import com.example.tienda.dto.ClienteResponseDTO;
 import org.springframework.data.domain.Page;
 
 public interface ClienteService {
+    Page<ClienteResponseDTO> listar(int pagina,int tamanio,String ordenarPor,String direccion,String buscar);
     Page<ClienteResponseDTO> listar(int pagina, int tamanio, String ordenarPor, String direccion);
     ClienteResponseDTO buscar(Long id);
     ClienteResponseDTO crear(ClienteRequestDTO dto);

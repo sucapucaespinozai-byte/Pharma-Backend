@@ -34,18 +34,20 @@ public class AuthServiceImpl implements AuthService {
     private final UsuarioRepository usuarioRepository;
     private final UsuarioMapper usuarioMapper;
     private final PasswordEncoder passwordEncoder;
+    private final com.example.tienda.service.service.AuditoriaService auditoriaService;
 
     public AuthServiceImpl(
             AuthenticationManager authenticationManager,
             JwtService jwtService,
             UsuarioRepository usuarioRepository,
             UsuarioMapper usuarioMapper,
-            PasswordEncoder passwordEncoder) {
+            PasswordEncoder passwordEncoder, com.example.tienda.service.service.AuditoriaService auditoriaService) {
         this.authenticationManager = authenticationManager;
         this.jwtService = jwtService;
         this.usuarioRepository = usuarioRepository;
         this.usuarioMapper = usuarioMapper;
         this.passwordEncoder = passwordEncoder;
+        this.auditoriaService = auditoriaService;
     }
 
     @Override
@@ -54,11 +56,17 @@ public class AuthServiceImpl implements AuthService {
         String username = request.getUsername().trim();
         log.info("Intento de inicio de sesión: usuario={}", username);
 
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(username, request.getPassword()));
+        Authentication authentication;
+        try {
+            authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, request.getPassword()));
+        } catch (org.springframework.security.core.AuthenticationException ex) {
+            auditoriaService.registrar(com.example.tienda.auditoria.EventoAuditoria.login("LOGIN_FALLIDO", username));
+            throw ex;
+        }
         UserDetails principal = (UserDetails) authentication.getPrincipal();
         Usuario usuario = buscar(principal.getUsername());
         String token = jwtService.generateToken(principal);
+        auditoriaService.registrar(com.example.tienda.auditoria.EventoAuditoria.login("LOGIN_EXITOSO", username));
         List<String> roles = usuarioMapper.nombresRoles(usuario.getRoles());
 
         log.info("Inicio de sesión correcto: usuario={} roles={}", usuario.getUsername(), roles);

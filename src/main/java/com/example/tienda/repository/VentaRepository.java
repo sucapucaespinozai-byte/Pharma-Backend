@@ -12,7 +12,7 @@ import org.springframework.data.repository.query.Param;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public interface VentaRepository extends JpaRepository<Venta, Long> {
+public interface VentaRepository extends JpaRepository<Venta, Long>, org.springframework.data.jpa.repository.JpaSpecificationExecutor<Venta> {
 
     @Query("""
     select distinct v

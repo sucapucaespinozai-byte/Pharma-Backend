@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class VentaResponseDTO {
+public class VentaResponseDTO implements java.io.Serializable {
 
     private Long id;
     private LocalDateTime fecha;
@@ -24,4 +24,5 @@ public class VentaResponseDTO {
     private BigDecimal total;
 
     private List<DetalleVentaResponseDTO> detalles;
+    private String creadoPor;
 }

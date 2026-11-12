@@ -16,6 +16,9 @@ public class ProductoMapper {
         dto.setNombre(producto.getNombre());
         dto.setPrecio(producto.getPrecio());
         dto.setStock(producto.getStock());
+        dto.setEstado(producto.getEstado());
+        dto.setCreadoPor(producto.getCreadoPor());
+        dto.setModificadoPor(producto.getModificadoPor());
 
         if (producto.getCategoria() != null) {
             CategoriaResumenDTO catDto = new CategoriaResumenDTO();

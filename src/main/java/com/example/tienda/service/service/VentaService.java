@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface VentaService extends CrudService<VentaRequestDTO, VentaResponseDTO, Long> {
+    com.example.tienda.dto.PaginaResponseDTO<VentaResponseDTO> buscar(Long clienteId,EstadoVenta estado,LocalDate desde,LocalDate hasta,String ordenarPor,String direccion,int pagina,int tamanio);
     VentaResponseDTO registrar(VentaRequestDTO request);
     VentaResponseDTO buscar(Long id);
     List<VentaResponseDTO> listar();

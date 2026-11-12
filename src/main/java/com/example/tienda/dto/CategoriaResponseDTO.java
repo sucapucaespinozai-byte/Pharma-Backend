@@ -11,4 +11,6 @@ public class CategoriaResponseDTO implements java.io.Serializable {
     private String descripcion;
     private Integer activo;
     private LocalDateTime createdAt;
+    private String creadoPor;
+    private String modificadoPor;
 }

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ClienteResponseDTO {
+public class ClienteResponseDTO implements java.io.Serializable {
     private Long id;
     private String dni;
     private String nombres;
@@ -22,4 +22,6 @@ public class ClienteResponseDTO {
     private Boolean estado;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaModificacion;
+    private String creadoPor;
+    private String modificadoPor;
 }

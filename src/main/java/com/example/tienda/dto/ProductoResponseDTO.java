@@ -11,4 +11,7 @@ public class ProductoResponseDTO implements java.io.Serializable {
     private BigDecimal precio;
     private Integer stock;
     private CategoriaResumenDTO categoria;
+    private String creadoPor;
+    private String modificadoPor;
+    private Boolean estado;
 }
