@@ -18,7 +18,7 @@ if (Test-Path -LiteralPath $archivoLocalPractica) { Get-Content $archivoLocalPra
 } }
 if (!$env:FRONTEND_ORIGINS) { $env:FRONTEND_ORIGINS = 'http://localhost:4200,http://127.0.0.1:4200,http://localhost:8081' }
 if ($Perfil -eq 'prod') {
-    if (!$env:DB_URL) { $env:DB_URL = 'jdbc:oracle:thin:@//localhost:1525/FREEPDB1' }
+    if (!$env:DB_URL) { $env:DB_URL = 'jdbc:oracle:thin:@//localhost:1524/FREEPDB1' }
     if (!$env:DB_USERNAME) { $env:DB_USERNAME = 'tienda' }
     if (!$env:DB_PASSWORD) { $env:DB_PASSWORD = $localPractica['spring.datasource.password'] }
     if (!$env:DB_PASSWORD) { throw 'Configura DB_PASSWORD por entorno o en application-local.properties (excluido de Git).' }

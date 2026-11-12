@@ -23,8 +23,10 @@ public class VentaController {
     private final VentaService ventaService;
 
     @GetMapping
-    public ResponseEntity<List<VentaResponseDTO>> listar() {
-        return ResponseEntity.ok(ventaService.listar());
+    public ResponseEntity<com.example.tienda.dto.PaginaResponseDTO<VentaResponseDTO>> listar(
+            @RequestParam(defaultValue="0") int pagina,
+            @RequestParam(defaultValue="20") int tamanio) {
+        return ResponseEntity.ok(ventaService.buscar(null,null,null,null,"fecha","desc",pagina,tamanio));
     }
 
     @GetMapping("/buscar")

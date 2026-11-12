@@ -84,7 +84,7 @@ public class VentaServicelmpl implements VentaService {
             throw new ReglaNegocioException(
                     "El campo de ordenamiento '"
                             + campo
-                            + "' no estÃ¡ permitido. Campos vÃ¡lidos: "
+                            + "' no está permitido. Campos válidos: "
                             + CAMPOS_ORDENABLES);
         }
 
@@ -95,9 +95,9 @@ public class VentaServicelmpl implements VentaService {
         if (!sentido.equalsIgnoreCase("asc")
                 && !sentido.equalsIgnoreCase("desc")) {
             throw new ReglaNegocioException(
-                    "La direcciÃ³n de ordenamiento '"
+                    "La dirección de ordenamiento '"
                             + sentido
-                            + "' no estÃ¡ permitida. Valores vÃ¡lidos: asc, desc");
+                            + "' no está permitida. Valores válidos: asc, desc");
         }
 
         return sentido.equalsIgnoreCase("asc")
@@ -144,7 +144,11 @@ public class VentaServicelmpl implements VentaService {
             if(hasta!=null)p.add(cb.lessThan(r.get("fecha"),hasta.plusDays(1).atStartOfDay()));
             return cb.and(p.toArray(jakarta.persistence.criteria.Predicate[]::new));
         },pageable);
-        return com.example.tienda.dto.PaginaResponseDTO.de(resultado.map(this::convertirResponse));
+        // El listado no carga todas las líneas. GET /ventas/{id} entrega el detalle.
+        return com.example.tienda.dto.PaginaResponseDTO.de(resultado.map(v -> new VentaResponseDTO(
+                v.getId(), v.getFecha(), v.getCliente().getId(),
+                v.getCliente().getNombres()+" "+v.getCliente().getApellidos(),
+                v.getEstado().name(), v.getTotal(), List.of(), v.getCreadoPor())));
     }
 
     @Override
@@ -161,7 +165,7 @@ public class VentaServicelmpl implements VentaService {
         }
 
         if (request.getDetalles() == null || request.getDetalles().isEmpty()) {
-            throw new IllegalArgumentException("La lista de detalles no puede estar vacÃ­a.");
+            throw new IllegalArgumentException("La lista de detalles no puede estar vacía.");
         }
 
         Venta venta = new Venta();

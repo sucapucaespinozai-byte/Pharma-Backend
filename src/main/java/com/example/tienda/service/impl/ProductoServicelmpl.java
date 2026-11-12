@@ -69,7 +69,7 @@ public class ProductoServicelmpl implements ProductoService {
     @CacheEvict(cacheNames = "productos", allEntries = true)
     public ProductoResponseDTO crear(ProductoRequestDTO requestDTO) {
         Categoria categoria = categoriaRepository.findById(requestDTO.getCategoriaId())
-                .orElseThrow(() -> new RecursosNoEncontradoException("CategorÃ­a no encontrada con ID: " + requestDTO.getCategoriaId()));
+                .orElseThrow(() -> new RecursosNoEncontradoException("Categoría no encontrada con ID: " + requestDTO.getCategoriaId()));
 
         Producto producto = new Producto();
         producto.setNombre(requestDTO.getNombre());
@@ -89,7 +89,7 @@ public class ProductoServicelmpl implements ProductoService {
                 .orElseThrow(() -> new RecursosNoEncontradoException("Producto no encontrado con ID: " + id));
 
         Categoria categoria = categoriaRepository.findById(requestDTO.getCategoriaId())
-                .orElseThrow(() -> new RecursosNoEncontradoException("CategorÃ­a no encontrada con ID: " + requestDTO.getCategoriaId()));
+                .orElseThrow(() -> new RecursosNoEncontradoException("Categoría no encontrada con ID: " + requestDTO.getCategoriaId()));
 
         var precioAnterior=productoExistente.getPrecio();
         productoExistente.setNombre(requestDTO.getNombre());
