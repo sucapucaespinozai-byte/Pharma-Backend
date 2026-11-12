@@ -22,8 +22,8 @@ public class ClienteController {
             @RequestParam(defaultValue = "0") int pagina,
             @RequestParam(defaultValue = "10") int tamanio,
             @RequestParam(defaultValue = "apellidos") String ordenarPor,
-            @RequestParam(defaultValue = "asc") String direccion) {
-        return ResponseEntity.ok(clienteService.listar(pagina, tamanio, ordenarPor, direccion));
+            @RequestParam(defaultValue = "asc") String direccion,@RequestParam(required=false)String buscar) {
+        return ResponseEntity.ok(clienteService.listar(pagina, tamanio, ordenarPor, direccion,buscar));
     }
 
     @GetMapping("/{id}")

@@ -12,7 +12,12 @@ import org.springframework.data.repository.query.Param;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public interface VentaRepository extends JpaRepository<Venta, Long> {
+public interface VentaRepository extends JpaRepository<Venta, Long>, org.springframework.data.jpa.repository.JpaSpecificationExecutor<Venta> {
+    @Override
+    @org.springframework.data.jpa.repository.EntityGraph(attributePaths="cliente")
+    org.springframework.data.domain.Page<Venta> findAll(
+            org.springframework.data.jpa.domain.Specification<Venta> filtro,
+            org.springframework.data.domain.Pageable pagina);
 
     @Query("""
     select distinct v

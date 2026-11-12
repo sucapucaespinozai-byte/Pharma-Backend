@@ -3,7 +3,7 @@ package com.example.tienda.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.tienda.entity.Cliente;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+public interface ClienteRepository extends JpaRepository<Cliente, Long>, org.springframework.data.jpa.repository.JpaSpecificationExecutor<Cliente> {
 
     boolean existsByDni(String dni);
     boolean existsByEmailIgnoreCase(String email);

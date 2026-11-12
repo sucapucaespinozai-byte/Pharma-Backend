@@ -26,6 +26,8 @@ public class CategoriaServicelmpl implements CategoriaService {
     private CategoriaResponseDTO convertirADto(Categoria categoria) {
         CategoriaResponseDTO dto = new CategoriaResponseDTO();
         dto.setId(categoria.getId());
+        dto.setCreadoPor(categoria.getCreadoPor());
+        dto.setModificadoPor(categoria.getModificadoPor());
         dto.setNombre(categoria.getNombre());
         dto.setDescripcion(categoria.getDescripcion());
         dto.setActivo(categoria.getActivo());
@@ -79,6 +81,7 @@ public class CategoriaServicelmpl implements CategoriaService {
         existente.setActivo(dto.getActivo() != null && dto.getActivo() ? 1 : 0);
 
         Categoria actualizada = categoriaRepository.save(existente);
+        categoriaRepository.flush();
         return convertirADto(actualizada);
     }
 

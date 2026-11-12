@@ -43,7 +43,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         ProductoController.class,
         ReporteController.class,
         UsuarioController.class,
-        VentaController.class
+        VentaController.class,
+        com.example.tienda.controller.AuditoriaController.class
 })
 @Import({
         SecurityConfig.class,
@@ -51,8 +52,47 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         RestAuthenticationEntryPoint.class,
         RestAccessDeniedHandler.class,
         SecurityErrorWriter.class
+        , com.example.tienda.config.RequestIdFilter.class
 })
 class SecurityAuthorizationTest {
+    @MockBean
+    private com.example.tienda.service.service.AuditoriaService auditoriaService;
+
+    @Test void vendedorNoConsultaAuditoria() throws Exception {
+        mockMvc.perform(get("/api/v1/auditoria").with(user("vendedor").authorities(() -> "VENTAS_LEER")))
+                .andExpect(status().isForbidden());
+    }
+
+    @Test void administradorConsultaAuditoria() throws Exception {
+        mockMvc.perform(get("/api/v1/auditoria").with(user("admin").authorities(() -> "USUARIOS_ADMINISTRAR")))
+                .andExpect(status().isOk());
+    }
+    @Test
+    void errorDeSeguridadComparteIdentificadorConLaCabecera() throws Exception {
+        mockMvc.perform(get("/api/v1/productos").header("X-Request-Id", "id-no-confiable"))
+                .andExpect(status().isUnauthorized())
+                .andExpect(jsonPath("$.requestId").isNotEmpty())
+                .andExpect(result -> {
+                    String id = result.getResponse().getHeader("X-Request-Id");
+                    String bodyId = new com.fasterxml.jackson.databind.ObjectMapper()
+                            .readTree(result.getResponse().getContentAsString()).get("requestId").asText();
+                    org.junit.jupiter.api.Assertions.assertEquals(id, bodyId);
+                    org.junit.jupiter.api.Assertions.assertNotEquals("id-no-confiable", id);
+                });
+    }
+
+    @Test
+    void errorDeNegocioIncluyeIdentificadorDeLaPeticion() throws Exception {
+        when(ventaService.crear(any())).thenThrow(new com.example.tienda.exception.ReglaNegocioException("Stock insuficiente"));
+        mockMvc.perform(post("/api/v1/ventas")
+                        .with(user("vendedor").authorities(() -> "VENTAS_REGISTRAR"))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"clienteId\":1,\"detalles\":[{\"productoId\":1,\"cantidad\":1}]}"))
+                .andExpect(status().isConflict())
+                .andExpect(jsonPath("$.requestId").isNotEmpty())
+                .andExpect(result -> org.junit.jupiter.api.Assertions.assertTrue(
+                        result.getResponse().getContentAsString().contains(result.getResponse().getHeader("X-Request-Id"))));
+    }
     @Autowired
     private MockMvc mockMvc;
 

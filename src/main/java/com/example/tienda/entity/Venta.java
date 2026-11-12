@@ -13,12 +13,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@jakarta.persistence.EntityListeners(org.springframework.data.jpa.domain.support.AuditingEntityListener.class)
 @Table(name = "ventas")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Venta {
+
+    @org.springframework.data.annotation.CreatedBy
+    @Column(name="creado_por", length=50, updatable=false)
+    private String creadoPor;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -21,10 +21,11 @@ public class ProductoController {
     @GetMapping
     public ResponseEntity<com.example.tienda.dto.PaginaResponseDTO<ProductoResponseDTO>> listar(
             @RequestParam(defaultValue = "0") int pagina,
-            @RequestParam(defaultValue = "10") int tamanio,
+            @RequestParam(defaultValue = "20") int tamanio,
             @RequestParam(defaultValue = "nombre") String ordenarPor,
-            @RequestParam(defaultValue = "asc") String direccion) {
-        return ResponseEntity.ok(productoService.listar(pagina, tamanio, ordenarPor, direccion));
+            @RequestParam(defaultValue = "asc") String direccion,
+            @RequestParam(required=false) String buscar, @RequestParam(defaultValue="false") boolean disponibles) {
+        return ResponseEntity.ok(productoService.listar(pagina, tamanio, ordenarPor, direccion, buscar, disponibles));
     }
 
     @GetMapping("/{id}")

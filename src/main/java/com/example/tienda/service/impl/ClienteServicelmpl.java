@@ -14,6 +14,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
+@org.springframework.transaction.annotation.Transactional
 public class ClienteServicelmpl implements ClienteService {
     private final ClienteRepository clienteRepository;
 
@@ -24,6 +25,8 @@ public class ClienteServicelmpl implements ClienteService {
     private ClienteResponseDTO convertirADto(Cliente cliente) {
         ClienteResponseDTO dto = new ClienteResponseDTO();
         dto.setId(cliente.getId());
+        dto.setCreadoPor(cliente.getCreadoPor());
+        dto.setModificadoPor(cliente.getModificadoPor());
         dto.setDni(cliente.getDni());
         dto.setNombres(cliente.getNombres());
         dto.setApellidos(cliente.getApellidos());
@@ -36,14 +39,17 @@ public class ClienteServicelmpl implements ClienteService {
 
     @Override
     public Page<ClienteResponseDTO> listar(int pagina, int tamanio, String ordenarPor, String direccion) {
-        Sort sort = direccion.equalsIgnoreCase("desc")
-                ? Sort.by(ordenarPor).descending()
-                : Sort.by(ordenarPor).ascending();
-
-        Pageable pageable = PageRequest.of(pagina, tamanio, sort);
-
-        return clienteRepository.findAll(pageable)
-                .map(this::convertirADto);
+        return listar(pagina,tamanio,ordenarPor,direccion,null);
+    }
+    @Override
+    @org.springframework.transaction.annotation.Transactional(readOnly=true)
+    public Page<ClienteResponseDTO> listar(int pagina,int tamanio,String ordenarPor,String direccion,String buscar) {
+        var pageable=com.example.tienda.util.PaginacionUtil.construir(pagina,tamanio,ordenarPor,direccion,java.util.Set.of("id","nombres","apellidos","dni"));
+        return clienteRepository.findAll((r,q,cb)->{
+            if(buscar==null||buscar.isBlank())return cb.conjunction();
+            String term="%"+buscar.trim().toLowerCase(java.util.Locale.ROOT).replace("!","!!").replace("%","!%").replace("_","!_")+"%";
+            return cb.or(cb.like(cb.lower(r.get("nombres")),term,'!'),cb.like(cb.lower(r.get("apellidos")),term,'!'),cb.like(r.get("dni"),term,'!'));
+        },pageable).map(this::convertirADto);
     }
 
     @Override
@@ -95,7 +101,7 @@ public class ClienteServicelmpl implements ClienteService {
         existente.setDireccion(dto.getDireccion());
         existente.setEstado(dto.getEstado());
 
-        Cliente actualizado = clienteRepository.save(existente);
+        Cliente actualizado = clienteRepository.saveAndFlush(existente);
         return convertirADto(actualizado);
     }
 

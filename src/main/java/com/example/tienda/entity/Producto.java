@@ -7,11 +7,21 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 @Entity
+@jakarta.persistence.EntityListeners(org.springframework.data.jpa.domain.support.AuditingEntityListener.class)
 @Table(name = "productos")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Producto {
+
+    @org.springframework.data.annotation.CreatedBy
+    @Column(name="creado_por", length=50, updatable=false)
+    private String creadoPor;
+
+    @org.springframework.data.annotation.LastModifiedBy
+    @Column(name="modificado_por", length=50)
+    private String modificadoPor;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
