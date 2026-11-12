@@ -43,7 +43,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         ProductoController.class,
         ReporteController.class,
         UsuarioController.class,
-        VentaController.class
+        VentaController.class,
+        com.example.tienda.controller.AuditoriaController.class
 })
 @Import({
         SecurityConfig.class,
@@ -54,6 +55,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         , com.example.tienda.config.RequestIdFilter.class
 })
 class SecurityAuthorizationTest {
+    @MockBean
+    private com.example.tienda.service.service.AuditoriaService auditoriaService;
+
+    @Test void vendedorNoConsultaAuditoria() throws Exception {
+        mockMvc.perform(get("/api/v1/auditoria").with(user("vendedor").authorities(() -> "VENTAS_LEER")))
+                .andExpect(status().isForbidden());
+    }
+
+    @Test void administradorConsultaAuditoria() throws Exception {
+        mockMvc.perform(get("/api/v1/auditoria").with(user("admin").authorities(() -> "USUARIOS_ADMINISTRAR")))
+                .andExpect(status().isOk());
+    }
     @Test
     void errorDeSeguridadComparteIdentificadorConLaCabecera() throws Exception {
         mockMvc.perform(get("/api/v1/productos").header("X-Request-Id", "id-no-confiable"))

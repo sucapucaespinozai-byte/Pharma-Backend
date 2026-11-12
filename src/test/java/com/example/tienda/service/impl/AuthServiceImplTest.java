@@ -44,7 +44,7 @@ class AuthServiceImplTest {
                 jwtService,
                 usuarioRepository,
                 usuarioMapper,
-                passwordEncoder
+                passwordEncoder, org.mockito.Mockito.mock(com.example.tienda.service.service.AuditoriaService.class)
         );
         usuario = new Usuario();
         usuario.setUsername("vendedor");
