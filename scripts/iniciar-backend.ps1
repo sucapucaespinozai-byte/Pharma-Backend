@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('local', 'dev', 'prod')][string]$Perfil = 'prod',
+    [ValidateSet('local', 'dev', 'prod')][string]$Perfil = 'dev',
     [switch]$Reiniciar,
     [ValidatePattern('^\d+(ms|s|m|h)$')][string]$CacheTtl = '10m'
 )
@@ -18,7 +18,7 @@ if (Test-Path -LiteralPath $archivoLocalPractica) { Get-Content $archivoLocalPra
 } }
 if (!$env:FRONTEND_ORIGINS) { $env:FRONTEND_ORIGINS = 'http://localhost:4200,http://127.0.0.1:4200,http://localhost:8081' }
 if ($Perfil -eq 'prod') {
-    if (!$env:DB_URL) { $env:DB_URL = 'jdbc:oracle:thin:@//localhost:1522/FREEPDB1' }
+    if (!$env:DB_URL) { $env:DB_URL = 'jdbc:oracle:thin:@//localhost:1525/FREEPDB1' }
     if (!$env:DB_USERNAME) { $env:DB_USERNAME = 'tienda' }
     if (!$env:DB_PASSWORD) { $env:DB_PASSWORD = $localPractica['spring.datasource.password'] }
     if (!$env:DB_PASSWORD) { throw 'Configura DB_PASSWORD por entorno o en application-local.properties (excluido de Git).' }
@@ -48,7 +48,7 @@ if (!$escuchaPractica) {
     New-Item -ItemType Directory -Force (Join-Path $backendPractica 'logs') | Out-Null
     Start-Process -FilePath $javaPractica -ArgumentList @('-jar', $jarPractica, '--server.port=8080', "--spring.profiles.active=$Perfil", "--spring.cache.redis.time-to-live=$CacheTtl") -WorkingDirectory $backendPractica -WindowStyle Hidden -RedirectStandardOutput (Join-Path $backendPractica 'logs/consola.log') -RedirectStandardError (Join-Path $backendPractica 'logs/errores-java.log') | Out-Null
     $backendListoPractica = $false
-    for ($intentoPractica=0; $intentoPractica -lt 25; $intentoPractica++) {
+    for ($intentoPractica=0; $intentoPractica -lt 60; $intentoPractica++) {
         try { Invoke-WebRequest 'http://localhost:8080/api/v1/health' -UseBasicParsing -TimeoutSec 2 | Out-Null; $backendListoPractica=$true; break } catch { Start-Sleep -Seconds 1 }
     }
     if (!$backendListoPractica) { throw 'El backend no arranco. Revisa PharmaBackend/logs/consola.log.' }
