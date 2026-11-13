@@ -17,9 +17,11 @@ import org.springframework.stereotype.Service;
 @org.springframework.transaction.annotation.Transactional
 public class ClienteServicelmpl implements ClienteService {
     private final ClienteRepository clienteRepository;
+    private final org.springframework.context.ApplicationEventPublisher eventos;
 
-    public ClienteServicelmpl(ClienteRepository clienteRepository) {
+    public ClienteServicelmpl(ClienteRepository clienteRepository, org.springframework.context.ApplicationEventPublisher eventos) {
         this.clienteRepository = clienteRepository;
+        this.eventos = eventos;
     }
 
     private ClienteResponseDTO convertirADto(Cliente cliente) {
@@ -78,6 +80,8 @@ public class ClienteServicelmpl implements ClienteService {
         cliente.setEstado(dto.getEstado());
 
         Cliente guardado = clienteRepository.save(cliente);
+        eventos.publishEvent(com.example.tienda.auditoria.EventoAuditoria.de(
+                "CLIENTE_REGISTRADO", "Cliente", guardado.getId(), "Cliente registrado"));
         return convertirADto(guardado);
     }
 

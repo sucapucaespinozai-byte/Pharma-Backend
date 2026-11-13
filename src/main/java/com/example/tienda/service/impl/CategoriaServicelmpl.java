@@ -18,9 +18,11 @@ import java.util.stream.Collectors;
 public class CategoriaServicelmpl implements CategoriaService {
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(CategoriaServicelmpl.class);
     private final CategoriaRepository categoriaRepository;
+    private final org.springframework.context.ApplicationEventPublisher eventos;
 
-    public CategoriaServicelmpl(CategoriaRepository categoriaRepository) {
+    public CategoriaServicelmpl(CategoriaRepository categoriaRepository, org.springframework.context.ApplicationEventPublisher eventos) {
         this.categoriaRepository = categoriaRepository;
+        this.eventos = eventos;
     }
 
     private CategoriaResponseDTO convertirADto(Categoria categoria) {
@@ -66,6 +68,8 @@ public class CategoriaServicelmpl implements CategoriaService {
         categoria.setDescripcion(dto.getDescripcion());
         categoria.setActivo(dto.getActivo() != null && dto.getActivo() ? 1 : 0);
         Categoria guardada = categoriaRepository.save(categoria);
+        eventos.publishEvent(com.example.tienda.auditoria.EventoAuditoria.de(
+                "CATEGORIA_REGISTRADA", "Categoria", guardada.getId(), "Categoria registrada"));
         return convertirADto(guardada);
     }
 
