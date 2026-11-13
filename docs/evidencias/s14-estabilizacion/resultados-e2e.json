@@ -1,0 +1,524 @@
+{
+  "fechaLocal": "2026-11-13T17:02:39.510000-05:00",
+  "frontendCommit": "fa5f1ca935223489c73a805451ba0ab9d8a4610e",
+  "backendCommit": "edf1843f91c5911b3916183389d2bd67910c5ca5",
+  "playwright": "1.65.0",
+  "url": "http://localhost:8081",
+  "browser": "Microsoft Edge",
+  "workers": 1,
+  "retries": 0,
+  "stats": {
+    "startTime": "2026-11-13T22:02:39.510Z",
+    "duration": 111338.612,
+    "expected": 42,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "casos": [
+    {
+      "prueba": "ruta protegida conserva returnUrl",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 2606,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "ruta protegida conserva returnUrl",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 2572,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "ruta protegida conserva returnUrl",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1389,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "credenciales incorrectas muestran el mensaje del backend",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 3151,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "credenciales incorrectas muestran el mensaje del backend",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1696,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "credenciales incorrectas muestran el mensaje del backend",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 2040,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "login vuelve a la ruta pedida",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1675,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "login vuelve a la ruta pedida",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1699,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "login vuelve a la ruta pedida",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1577,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-08 stock cambiado antes de enviar devuelve 409 sin registrar venta",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 2977,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-08 stock cambiado antes de enviar devuelve 409 sin registrar venta",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 3097,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-08 stock cambiado antes de enviar devuelve 409 sin registrar venta",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 2835,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-09 no permite registrar una venta sin productos",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1646,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-09 no permite registrar una venta sin productos",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1854,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-09 no permite registrar una venta sin productos",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1518,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-10 cliente nuevo disponible para venta inmediata",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 3383,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-10 cliente nuevo disponible para venta inmediata",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 4364,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-10 cliente nuevo disponible para venta inmediata",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 3471,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-11 cambiar fecha desde pagina 3 vuelve a pagina 1",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1782,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-11 cambiar fecha desde pagina 3 vuelve a pagina 1",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 2497,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-11 cambiar fecha desde pagina 3 vuelve a pagina 1",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 2160,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-12 admin encuentra su venta y requestId en auditoria con filtros en URL",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 3497,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-12 admin encuentra su venta y requestId en auditoria con filtros en URL",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 3729,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-12 admin encuentra su venta y requestId en auditoria con filtros en URL",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 4018,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-13 vendedor no ve auditoria ni accede por URL",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1671,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-13 vendedor no ve auditoria ni accede por URL",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1904,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-13 vendedor no ve auditoria ni accede por URL",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1870,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-14 token alterado vuelve al login con aviso de sesion expirada",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1880,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-14 token alterado vuelve al login con aviso de sesion expirada",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 2249,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "E2E-14 token alterado vuelve al login con aviso de sesion expirada",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1908,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "venta desde SPA descuenta stock sin F5",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 3394,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "venta desde SPA descuenta stock sin F5",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 3678,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "venta desde SPA descuenta stock sin F5",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 3132,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "pagina del servidor y URL se conservan con F5",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 2830,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "pagina del servidor y URL se conservan con F5",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 2217,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "pagina del servidor y URL se conservan con F5",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1987,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "almacen no ve Ventas y la URL directa esta denegada",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1800,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "almacen no ve Ventas y la URL directa esta denegada",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1540,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "almacen no ve Ventas y la URL directa esta denegada",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1472,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "vendedor consulta Productos sin permisos de edicion",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1688,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "vendedor consulta Productos sin permisos de edicion",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1671,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "prueba": "vendedor consulta Productos sin permisos de edicion",
+      "estado": "expected",
+      "repeticion": 0,
+      "resultados": [
+        {
+          "estado": "passed",
+          "duracionMs": 1409,
+          "retry": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "venta": {
+    "id": 20027,
+    "fecha": "2026-11-13T17:01:43.9997505",
+    "clienteId": 3,
+    "clienteNombre": "S14 Demo Cliente de prueba",
+    "estado": "REGISTRADA",
+    "total": 2.75,
+    "detalles": [
+      {
+        "productoId": 5044,
+        "productoNombre": "00 S14 Producto de prueba",
+        "cantidad": 1,
+        "precio": 2.75,
+        "subtotal": 2.75
+      }
+    ],
+    "creadoPor": "vendedor"
+  },
+  "requestId": "edc87e21-7c38-4601-8869-6a84f56a7218",
+  "evento": {
+    "id": 82,
+    "fecha": "2026-11-13T17:01:44.043698",
+    "usuario": "vendedor",
+    "accion": "VENTA_REGISTRADA",
+    "entidad": "Venta",
+    "entidadId": 20027,
+    "detalle": "total=2.75 | items=1",
+    "requestId": "edc87e21-7c38-4601-8869-6a84f56a7218"
+  }
+}

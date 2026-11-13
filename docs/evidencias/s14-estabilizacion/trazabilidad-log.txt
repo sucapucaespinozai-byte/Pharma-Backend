@@ -1,0 +1,13 @@
+17:01:43.972 DEBUG [edc87e21-7c38-4601-8869-6a84f56a7218] org.hibernate.SQL - 
+17:01:43.977 DEBUG [edc87e21-7c38-4601-8869-6a84f56a7218] org.hibernate.SQL - 
+17:01:43.983 DEBUG [edc87e21-7c38-4601-8869-6a84f56a7218] org.hibernate.SQL - 
+17:01:43.994 INFO  [edc87e21-7c38-4601-8869-6a84f56a7218] c.e.t.service.impl.VentaServicelmpl - Inicio registrar venta | lineas=1
+17:01:43.995 DEBUG [edc87e21-7c38-4601-8869-6a84f56a7218] org.hibernate.SQL - 
+17:01:44.000 DEBUG [edc87e21-7c38-4601-8869-6a84f56a7218] org.hibernate.SQL - 
+17:01:44.006 DEBUG [edc87e21-7c38-4601-8869-6a84f56a7218] org.hibernate.SQL - 
+17:01:44.021 DEBUG [edc87e21-7c38-4601-8869-6a84f56a7218] org.hibernate.SQL - 
+17:01:44.030 INFO  [edc87e21-7c38-4601-8869-6a84f56a7218] c.e.t.service.impl.VentaServicelmpl - Fin registrar venta | ventaId=20027 | lineas=1 | duracionMs=36
+17:01:44.033 DEBUG [edc87e21-7c38-4601-8869-6a84f56a7218] org.hibernate.SQL - 
+17:01:44.044 DEBUG [edc87e21-7c38-4601-8869-6a84f56a7218] org.hibernate.SQL - 
+17:01:44.058 INFO  [edc87e21-7c38-4601-8869-6a84f56a7218] c.e.t.auditoria.AuditoriaListener - Auditoria confirmada accion=VENTA_REGISTRADA entidad=Venta entidadId=20027 usuario=vendedor requestId=edc87e21-7c38-4601-8869-6a84f56a7218
+17:01:44.069 INFO  [edc87e21-7c38-4601-8869-6a84f56a7218] c.e.tienda.config.RequestIdFilter - POST /api/v1/ventas -> 201 (102 ms)

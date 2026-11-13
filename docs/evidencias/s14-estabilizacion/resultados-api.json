@@ -1,0 +1,135 @@
+{
+  "fecha": "2026-11-13T17:01:44.347713-05:00",
+  "ejecutor": "Runner HTTP de la coleccion, no interfaz de Postman",
+  "duracionSegundos": 1.67,
+  "casos": [
+    {
+      "caso": "Login admin",
+      "esperado": 200,
+      "obtenido": 200,
+      "correcto": true,
+      "ms": 383.51,
+      "requestId": "48a797de-b573-47ef-bd96-a5df520d4d70"
+    },
+    {
+      "caso": "Login vendedor",
+      "esperado": 200,
+      "obtenido": 200,
+      "correcto": true,
+      "ms": 251.27,
+      "requestId": "c55227e1-a626-4ef3-ab4e-80f7ed83b355"
+    },
+    {
+      "caso": "Productos paginados 200",
+      "esperado": 200,
+      "obtenido": 200,
+      "correcto": true,
+      "ms": 172.96,
+      "requestId": "fcdaa0bc-93be-4b6b-b214-4ffd3e9f7699"
+    },
+    {
+      "caso": "Cliente demo 200",
+      "esperado": 200,
+      "obtenido": 200,
+      "correcto": true,
+      "ms": 47.27,
+      "requestId": "7009f492-68a5-422b-9bd7-0005eba2a8be"
+    },
+    {
+      "caso": "Auditoria sin token 401",
+      "esperado": 401,
+      "obtenido": 401,
+      "correcto": true,
+      "ms": 11.31,
+      "requestId": "60a19346-199a-4261-9e41-b601e8ee5c10"
+    },
+    {
+      "caso": "Auditoria vendedor 403",
+      "esperado": 403,
+      "obtenido": 403,
+      "correcto": true,
+      "ms": 28.95,
+      "requestId": "22e83c78-0e91-4ef3-b288-59756dba549f"
+    },
+    {
+      "caso": "Venta inexistente 404",
+      "esperado": 404,
+      "obtenido": 404,
+      "correcto": true,
+      "ms": 57.09,
+      "requestId": "6be79a90-7f2f-4b0c-89fd-a81082395614"
+    },
+    {
+      "caso": "Producto inexistente 404",
+      "esperado": 404,
+      "obtenido": 404,
+      "correcto": true,
+      "ms": 62.17,
+      "requestId": "a9412664-7dd2-4b98-bcf6-dcf0849d5c19"
+    },
+    {
+      "caso": "Venta sin detalles 400",
+      "esperado": 400,
+      "obtenido": 400,
+      "correcto": true,
+      "ms": 74.24,
+      "requestId": "9025c151-7ee1-481e-835a-330599099972"
+    },
+    {
+      "caso": "Producto vacio 400",
+      "esperado": 400,
+      "obtenido": 400,
+      "correcto": true,
+      "ms": 72.46,
+      "requestId": "564ac1fc-1532-45a3-b1fd-89f6f74f8e2e"
+    },
+    {
+      "caso": "Pagina excesiva 409",
+      "esperado": 409,
+      "obtenido": 409,
+      "correcto": true,
+      "ms": 35.98,
+      "requestId": "daffb757-4093-42fa-8e92-1fc08009d12d"
+    },
+    {
+      "caso": "Venta supera stock 409",
+      "esperado": 409,
+      "obtenido": 409,
+      "correcto": true,
+      "ms": 65.48,
+      "requestId": "fcccbedb-46c5-4bd2-8dbd-c553e3c72db2"
+    },
+    {
+      "caso": "Venta real demo 201",
+      "esperado": 201,
+      "obtenido": 201,
+      "correcto": true,
+      "ms": 132.65,
+      "requestId": "edc87e21-7c38-4601-8869-6a84f56a7218"
+    },
+    {
+      "caso": "Auditoria ventas 200",
+      "esperado": 200,
+      "obtenido": 200,
+      "correcto": true,
+      "ms": 69.71,
+      "requestId": "39beb3dd-ac67-4aa6-b481-030c4f661bc6"
+    },
+    {
+      "caso": "Categoria registrada 201",
+      "esperado": 201,
+      "obtenido": 201,
+      "correcto": true,
+      "ms": 154.92,
+      "requestId": "39153f1c-782c-4cda-8f11-7fe4baad2136"
+    },
+    {
+      "caso": "Auditoria categorias 200",
+      "esperado": 200,
+      "obtenido": 200,
+      "correcto": true,
+      "ms": 47.92,
+      "requestId": "a04d5b68-d725-4e30-88bd-23d96adf65cb"
+    }
+  ]
+}
